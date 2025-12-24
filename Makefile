@@ -142,6 +142,8 @@ install:
 	$(MAKE) -C $(BUILD_DIR) install
 	@echo "$(YELLOW)Compiling GSettings schemas...$(NC)"
 	glib-compile-schemas $(PREFIX)/share/glib-2.0/schemas/ || true
+	@echo "$(YELLOW)Enabling English and Japanese languages...$(NC)"
+	gsettings set org.maliit.keyboard.maliit enabled-languages "['en', 'ja']" || true
 	@echo "$(GREEN)Installation completed!$(NC)"
 	@echo ""
 	@echo "$(YELLOW)Run 'make restart' to restart maliit-server$(NC)"

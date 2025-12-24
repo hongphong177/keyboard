@@ -61,6 +61,15 @@ Item {
     /*! indicates if te key is currently pressed/down*/
     property alias currentlyPressed: keyFlickArea.pressed
 
+    // Block keyboard swipe when flick popup should be shown
+    onCurrentlyPressedChanged: {
+        if (currentlyPressed && leaves.length > 1 && !noMagnifier) {
+            canvas.extendedKeysShown = true
+        } else if (!currentlyPressed) {
+            canvas.extendedKeysShown = false
+        }
+    }
+
     property string oskState: panel.activeKeypadState
 
     // Allow action keys to override the standard key behaviour
@@ -125,9 +134,6 @@ Item {
             chars: leaves
             index: keyFlickArea.index
             visible: key.currentlyPressed && chars.length > 1 && !noMagnifier
-            onVisibleChanged: {
-                canvas.extendedKeysShown = visible
-            }
         }
     }
 
