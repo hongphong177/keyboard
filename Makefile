@@ -100,6 +100,7 @@ $(BUILD_DIR)/Makefile:
 	@mkdir -p $(BUILD_DIR)
 	cd $(BUILD_DIR) && cmake .. \
 		-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
+		-DCMAKE_PREFIX_PATH="/usr;/usr/local" \
 		-DCMAKE_BUILD_TYPE=Release \
 		-Denable-hunspell=ON \
 		-Denable-tests=OFF
