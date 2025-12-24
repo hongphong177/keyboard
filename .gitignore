@@ -1,6 +1,5 @@
 -/cmake-build-debug/
 -/.idea/
-Makefile
 moc_*
 *.moc
 *.o
