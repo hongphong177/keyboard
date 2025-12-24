@@ -164,9 +164,16 @@ Item {
 
     Connections {
         target: swipeArea.drag
-        onActiveChanged: {
-            if (swipeArea.drag.active)
+        function onActiveChanged() {
+            // Only cancel press if extended keys NOT shown
+            // When flick popup is visible, don't let swipe interfere
+            if (swipeArea.drag.active && !canvas.extendedKeysShown) {
                 keyFlickArea.cancelPress();
+            }
+            // If drag started while popup visible, reset keyboard position
+            if (swipeArea.drag.active && canvas.extendedKeysShown) {
+                keyboardSurface.y = 0;
+            }
         }
     }
 }
