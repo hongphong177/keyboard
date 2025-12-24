@@ -11,7 +11,7 @@ GREEN := \033[0;32m
 YELLOW := \033[0;33m
 NC := \033[0m
 
-.PHONY: all build install clean deps uninstall rebuild help purge delete
+.PHONY: all build install clean deps uninstall rebuild help purge delete install-maliit-framework
 
 # Default target
 all: build
@@ -48,6 +48,7 @@ deps:
 	sudo apt install -y \
 		cmake \
 		build-essential \
+		pkg-config \
 		qtbase5-dev \
 		qtdeclarative5-dev \
 		qtquickcontrols2-5-dev \
@@ -56,10 +57,37 @@ deps:
 		libglib2.0-dev \
 		libhunspell-dev \
 		libanthy-dev \
-		gettext \
-		maliit-framework-dev \
-		libmaliit-dev
+		gettext
+	@echo "$(YELLOW)Checking for maliit-framework...$(NC)"
+	@if ! pkg-config --exists maliit-plugins 2>/dev/null; then \
+		echo "$(YELLOW)maliit-framework not found. Installing from source...$(NC)"; \
+		$(MAKE) install-maliit-framework; \
+	else \
+		echo "$(GREEN)maliit-framework already installed.$(NC)"; \
+	fi
 	@echo "$(GREEN)Dependencies installed successfully!$(NC)"
+
+# Install maliit-framework from source
+install-maliit-framework:
+	@echo "$(GREEN)Building maliit-framework from source...$(NC)"
+	sudo apt install -y \
+		libwayland-dev \
+		wayland-protocols \
+		libxkbcommon-dev \
+		doxygen \
+		libqt5waylandclient5-dev \
+		qtwayland5-dev-tools \
+		qtwayland5
+	@mkdir -p /tmp/maliit-build
+	cd /tmp/maliit-build && \
+		rm -rf maliit-framework && \
+		git clone https://github.com/maliit/framework.git maliit-framework && \
+		cd maliit-framework && \
+		mkdir -p build && cd build && \
+		cmake .. -DCMAKE_INSTALL_PREFIX=/usr && \
+		make -j$(JOBS) && \
+		sudo make install
+	@echo "$(GREEN)maliit-framework installed successfully!$(NC)"
 
 # Configure and build
 build: $(BUILD_DIR)/Makefile
