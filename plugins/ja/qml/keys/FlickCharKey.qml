@@ -61,13 +61,9 @@ Item {
     /*! indicates if te key is currently pressed/down*/
     property alias currentlyPressed: keyFlickArea.pressed
 
-    // Block keyboard swipe when flick popup should be shown
-    onCurrentlyPressedChanged: {
-        if (currentlyPressed && leaves.length > 1 && !noMagnifier) {
-            canvas.extendedKeysShown = true
-        } else if (!currentlyPressed) {
-            canvas.extendedKeysShown = false
-        }
+    // Disable keyboard swipe down for Japanese flick keyboard
+    Component.onCompleted: {
+        canvas.extendedKeysShown = true
     }
 
     property string oskState: panel.activeKeypadState
@@ -165,13 +161,9 @@ Item {
     Connections {
         target: swipeArea.drag
         function onActiveChanged() {
-            // Only cancel press if extended keys NOT shown
-            // When flick popup is visible, don't let swipe interfere
-            if (swipeArea.drag.active && !canvas.extendedKeysShown) {
-                keyFlickArea.cancelPress();
-            }
-            // If drag started while popup visible, reset keyboard position
-            if (swipeArea.drag.active && canvas.extendedKeysShown) {
+            // Swipe down is disabled for Japanese keyboard
+            // Reset keyboard position if somehow drag started
+            if (swipeArea.drag.active) {
                 keyboardSurface.y = 0;
             }
         }
