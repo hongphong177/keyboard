@@ -1,0 +1,277 @@
+# Georgian translation for maliit-keyboard
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the maliit-keyboard package.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maliit-keyboard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-14 13:08-0500\n"
+"PO-Revision-Date: 2022-10-22 20:24+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <ka@li.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2017-04-07 06:31+0000\n"
+"X-Generator: Poedit 3.2\n"
+
+#: qml/ActionsToolbar.qml:56
+msgid "Undo"
+msgstr "დაბრუნება"
+
+#: qml/ActionsToolbar.qml:57
+msgid "Redo"
+msgstr "აღდგენა"
+
+#: qml/ActionsToolbar.qml:58
+msgid "Select All"
+msgstr "ყველას მონიშვნა"
+
+#: qml/ActionsToolbar.qml:82
+msgid "Cut"
+msgstr "ამოჭრა"
+
+#: qml/ActionsToolbar.qml:83
+msgid "Copy"
+msgstr "კოპირება"
+
+#: qml/ActionsToolbar.qml:84
+msgid "Paste"
+msgstr "ჩასმა"
+
+#: qml/Keyboard.qml:336
+msgid "Swipe to move selection"
+msgstr "გაუსვით მონიშნულის გადასატანად"
+
+#: qml/Keyboard.qml:336
+msgid "Double-tap to exit selection mode"
+msgstr "მონიშვნის რეჟიმიდან გასასვლელად ორჯერ დაატყაპუნეთ"
+
+#: qml/Keyboard.qml:337
+msgid "Swipe to move cursor"
+msgstr "კურსორის გადასატანად გაუსვით"
+
+#: qml/Keyboard.qml:337
+msgid "Double-tap to enter selection mode"
+msgstr "მონიშვნის რეჟიმში გადასასვლელად ორჯერ დაატყაპუნეთ"
+
+#: qml/keys/LanguageMenu.qml:48
+msgid "Settings"
+msgstr "მორგება"
+
+#: qml/keys/languages.js:19
+msgid "Arabic"
+msgstr "არაბული"
+
+#: qml/keys/languages.js:20
+msgid "Azerbaijani"
+msgstr "აზერბაიჯანული"
+
+#: qml/keys/languages.js:21
+msgid "Belarusian"
+msgstr "ბელორუსული"
+
+#: qml/keys/languages.js:22
+msgid "Bulgarian"
+msgstr "ბულგარული"
+
+#: qml/keys/languages.js:23
+msgid "Bosnian"
+msgstr "ბოსნიური"
+
+#: qml/keys/languages.js:24
+msgid "Catalan"
+msgstr "კატალანური"
+
+#: qml/keys/languages.js:25
+msgid "Czech"
+msgstr "ჩეხური"
+
+#: qml/keys/languages.js:26
+msgid "Danish"
+msgstr "დანიური"
+
+#: qml/keys/languages.js:27
+msgid "German"
+msgstr "გერმანული"
+
+#: qml/keys/languages.js:28
+msgid "Emoji"
+msgstr "ემოჯი"
+
+#: qml/keys/languages.js:29
+msgid "Greek"
+msgstr "ბერძნული"
+
+#: qml/keys/languages.js:30
+msgid "English"
+msgstr "ინგლისური"
+
+#: qml/keys/languages.js:31
+msgid ""
+"English\n"
+"(Dvorak)"
+msgstr "ინგლისური (Dvorak)"
+
+#: qml/keys/languages.js:32
+msgid "Esperanto"
+msgstr "ესპერანტო"
+
+#: qml/keys/languages.js:33
+msgid "Spanish"
+msgstr "ესპანური"
+
+#: qml/keys/languages.js:34
+msgid "Persian"
+msgstr "სპარსული"
+
+#: qml/keys/languages.js:35
+msgid "Finnish"
+msgstr "ფინური"
+
+#: qml/keys/languages.js:36
+msgid "French"
+msgstr "ფრანგული"
+
+#: qml/keys/languages.js:37
+msgid ""
+"French\n"
+"(Swiss)"
+msgstr ""
+"ფრანგული\n"
+"(შვეიცარიული)"
+
+#: qml/keys/languages.js:38
+msgid "Scottish Gaelic"
+msgstr "შოტლანდიური გალური"
+
+#: qml/keys/languages.js:39
+msgid "Hebrew"
+msgstr "ივრითი"
+
+#: qml/keys/languages.js:40
+msgid "Croatian"
+msgstr "ხორვატული"
+
+#: qml/keys/languages.js:41
+msgid "Hungarian"
+msgstr "უნგრული"
+
+#: qml/keys/languages.js:42
+msgid "Icelandic"
+msgstr "ისლანდიური"
+
+#: qml/keys/languages.js:43
+msgid "Italian"
+msgstr "იტალიური"
+
+#: qml/keys/languages.js:44
+msgid "Japanese"
+msgstr "იაპონური"
+
+#: qml/keys/languages.js:45
+msgid "Lithuanian"
+msgstr "ლიტვური"
+
+#: qml/keys/languages.js:46
+msgid "Latvian"
+msgstr "ლატვიური"
+
+#: qml/keys/languages.js:47
+msgid "Macedonian"
+msgstr "მაკედონური"
+
+#: qml/keys/languages.js:48
+msgid "Korean"
+msgstr "კორეული"
+
+#: qml/keys/languages.js:49
+msgid "Dutch"
+msgstr "ჰოლანდიური"
+
+#: qml/keys/languages.js:50
+msgid "Norwegian"
+msgstr "ნორვეგიული"
+
+#: qml/keys/languages.js:51
+msgid "Polish"
+msgstr "პოლონური"
+
+#: qml/keys/languages.js:52
+msgid "Portuguese"
+msgstr "პორტუგალიური"
+
+#: qml/keys/languages.js:53
+msgid "Romanian"
+msgstr "რუმინული"
+
+#: qml/keys/languages.js:54
+msgid "Russian"
+msgstr "რუსული"
+
+#: qml/keys/languages.js:55
+msgid "Slovenian"
+msgstr "სლოვენური"
+
+#: qml/keys/languages.js:56
+msgid "Serbian"
+msgstr "სერბული"
+
+#: qml/keys/languages.js:57
+msgid "Swedish"
+msgstr "შვედური"
+
+#: qml/keys/languages.js:58
+msgid "Thai"
+msgstr "ტაილანდური"
+
+#: qml/keys/languages.js:59
+msgid "Turkish"
+msgstr "თურქული"
+
+#: qml/keys/languages.js:60
+msgid "Ukrainian"
+msgstr "უკრაინული"
+
+#: qml/keys/languages.js:61
+msgid ""
+"Chinese\n"
+"(Pinyin)"
+msgstr ""
+"ჩინური\n"
+"(ჩინური ტრანსკრიპციების სისტემა)"
+
+#: qml/keys/languages.js:62
+msgid ""
+"Chinese\n"
+"(Chewing)"
+msgstr ""
+"ჩინური\n"
+"(Chewing)"
+
+#: src/plugin/inputmethod.cpp:275
+msgid "Done"
+msgstr "დასრულდა"
+
+#: src/plugin/inputmethod.cpp:278
+msgid "Go"
+msgstr "გადასვლა"
+
+#: src/plugin/inputmethod.cpp:281
+msgid "Send"
+msgstr "გაგზავნა"
+
+#: src/plugin/inputmethod.cpp:284
+msgid "Search"
+msgstr "ძებნა"
+
+#: src/plugin/inputmethod.cpp:287
+msgid "Next"
+msgstr "შემდეგი"
+
+#: src/plugin/inputmethod.cpp:290
+msgid "Previous"
+msgstr "წინა"

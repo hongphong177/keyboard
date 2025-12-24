@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/phong/code/SAAS/keyboard/logs/.03329608732ab43bb56a5be469a551088274cbc5-audit.json",
+    "files": [
+        {
+            "date": 1766550373209,
+            "name": "/home/phong/code/SAAS/keyboard/logs/mcp-puppeteer-2025-12-24.log",
+            "hash": "bd37cbcd27e4904f169aff318c3aad5a1504eba54a7a122f777ea5e6db5d00aa"
+        }
+    ],
+    "hashType": "sha256"
+}
