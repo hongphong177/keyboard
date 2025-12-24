@@ -11,7 +11,7 @@ GREEN := \033[0;32m
 YELLOW := \033[0;33m
 NC := \033[0m
 
-.PHONY: all build install clean deps uninstall rebuild help purge delete install-maliit-framework
+.PHONY: all build install clean deps deps-fedora uninstall rebuild help purge delete install-maliit-framework
 
 # Default target
 all: build
@@ -23,23 +23,24 @@ help:
 	@echo "Usage: make [target]"
 	@echo ""
 	@echo "Targets:"
-	@echo "  deps      - Install build dependencies (requires sudo)"
-	@echo "  build     - Build the project"
-	@echo "  install   - Install to system (requires sudo)"
-	@echo "  uninstall - Remove from system (requires sudo)"
-	@echo "  delete    - Completely remove all files (alias: purge)"
-	@echo "  purge     - Completely remove all files + clean build"
-	@echo "  clean     - Clean build directory"
-	@echo "  rebuild   - Clean and build"
-	@echo "  restart   - Restart maliit-server"
-	@echo "  test      - Run tests"
-	@echo "  all       - Build only (default)"
+	@echo "  deps        - Install dependencies (Ubuntu/Debian)"
+	@echo "  deps-fedora - Install dependencies (Fedora)"
+	@echo "  build       - Build the project"
+	@echo "  install     - Install to system (requires sudo)"
+	@echo "  uninstall   - Remove from system (requires sudo)"
+	@echo "  delete      - Completely remove all files (alias: purge)"
+	@echo "  purge       - Completely remove all files + clean build"
+	@echo "  clean       - Clean build directory"
+	@echo "  rebuild     - Clean and build"
+	@echo "  restart     - Restart maliit-server"
+	@echo "  test        - Run tests"
+	@echo "  all         - Build only (default)"
 	@echo ""
-	@echo "Quick start:"
-	@echo "  make deps    # First time only"
-	@echo "  make build"
-	@echo "  sudo make install"
-	@echo "  make restart"
+	@echo "Quick start (Ubuntu/Debian):"
+	@echo "  make deps && make build && sudo make install && make restart"
+	@echo ""
+	@echo "Quick start (Fedora):"
+	@echo "  make deps-fedora && make build && sudo make install && make restart"
 
 # Install dependencies (Ubuntu/Debian)
 deps:
@@ -91,6 +92,32 @@ install-maliit-framework:
 		sudo make install && \
 		sudo ldconfig
 	@echo "$(GREEN)maliit-framework installed successfully!$(NC)"
+
+# Install dependencies (Fedora)
+deps-fedora:
+	@echo "$(GREEN)Installing build dependencies for Fedora...$(NC)"
+	@echo "$(YELLOW)Removing existing maliit-keyboard package...$(NC)"
+	-sudo dnf remove -y maliit-keyboard 2>/dev/null || true
+	@echo "$(GREEN)Installing build dependencies...$(NC)"
+	sudo dnf install -y \
+		cmake \
+		gcc-c++ \
+		qt5-qtbase-devel \
+		qt5-qtdeclarative-devel \
+		qt5-qtquickcontrols2-devel \
+		qt5-qtmultimedia-devel \
+		qt5-qtwayland-devel \
+		qt5-qtfeedback-devel \
+		wayland-devel \
+		libxkbcommon-devel \
+		glib2-devel \
+		hunspell-devel \
+		anthy-devel \
+		doxygen \
+		gettext \
+		maliit-framework-devel
+	@echo "$(GREEN)Dependencies installed successfully!$(NC)"
+	@echo "$(YELLOW)Note: Fedora's maliit-keyboard was removed. Run 'make build && sudo make install' to install from source.$(NC)"
 
 # Configure and build
 build: $(BUILD_DIR)/Makefile
