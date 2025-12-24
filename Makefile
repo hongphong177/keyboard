@@ -70,14 +70,16 @@ deps:
 # Install maliit-framework from source
 install-maliit-framework:
 	@echo "$(GREEN)Building maliit-framework from source...$(NC)"
+	sudo apt update
 	sudo apt install -y \
 		libwayland-dev \
 		wayland-protocols \
 		libxkbcommon-dev \
-		doxygen \
-		libqt5waylandclient5-dev \
-		qtwayland5-dev-tools \
-		qtwayland5
+		doxygen
+	@# Try different Qt5 wayland package names (varies by Ubuntu version)
+	-sudo apt install -y libqt5waylandclient5-dev qtwayland5-dev-tools qtwayland5 2>/dev/null || \
+		sudo apt install -y qt5-wayland-dev qtwayland5 2>/dev/null || \
+		sudo apt install -y libqt5waylandclient5-private-dev 2>/dev/null || true
 	@mkdir -p /tmp/maliit-build
 	cd /tmp/maliit-build && \
 		rm -rf maliit-framework && \
@@ -86,7 +88,8 @@ install-maliit-framework:
 		mkdir -p build && cd build && \
 		cmake .. -DCMAKE_INSTALL_PREFIX=/usr && \
 		make -j$(JOBS) && \
-		sudo make install
+		sudo make install && \
+		sudo ldconfig
 	@echo "$(GREEN)maliit-framework installed successfully!$(NC)"
 
 # Configure and build
